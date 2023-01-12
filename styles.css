@@ -76,12 +76,22 @@ nav > img {
     padding: 15px;
 }
 
+#main-button:hover {
+    background-color: hsl(240, 100%, 5%);
+    cursor: pointer;
+}
+
 .new {
     grid-row: 1/4;
     grid-column: 3;
     background-color: hsl(240, 100%, 5%);
     color: hsl(36, 100%, 99%);
     padding: 20px;
+}
+
+.new > h3:hover {
+    color: hsl(35, 77%, 62%);
+    cursor: pointer;
 }
 
 .new > h2 {
@@ -131,6 +141,11 @@ nav > img {
 
 }
 
+.article-preview > h3:hover{
+    color: hsl(5, 85%, 63%);
+    cursor: pointer;
+}
+
 .article-preview > p {
     grid-column: 2;
     grid-row: 3;
@@ -150,3 +165,4 @@ nav > img {
     grid-row: 2;
     font-weight: 800;
 }
+
