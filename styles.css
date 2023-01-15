@@ -49,6 +49,10 @@ nav > a {
 
 }
 
+nav > a:hover {
+    color: hsl(35, 77%, 62%);
+}
+
 picture {
     grid-row: 1;
     grid-column: 1/3 ;
