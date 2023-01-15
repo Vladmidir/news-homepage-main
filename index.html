@@ -21,19 +21,34 @@
   </style>
 </head>
 <body>
-  
-  <nav>
-    <img src="./assets/images/logo.svg" alt="website logo">
+
+  <div class="top-div">
+    <img class="mobile-logo" src="./assets/images/logo.svg" alt="website logo">
+    <img class="menu" src="./assets/images/icon-menu.svg" alt="menu" style="width: 0;" onclick="openMenu()">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="index.html">New</a>
+      <a href="index.html">Popular</a>
+      <a href="index.html">Trending</a>
+      <a href="index.html">Categories</a>
+    </nav>
+  </div>
+
+  <div id="side-menu">
     <a href="index.html">Home</a>
     <a href="index.html">New</a>
     <a href="index.html">Popular</a>
     <a href="index.html">Trending</a>
     <a href="index.html">Categories</a>
-  </nav>
+  </div>
 
-  <main>
-
-      <img id="main-image" src="./assets/images/image-web-3-desktop.jpg" alt="puzzle picture">
+  <img id="close-menu" src="./assets/images/icon-menu-close.svg" alt="close menu" onclick="closeMenu()">
+  <div id="shade"></div>
+  <main id="main">
+      <picture>
+        <source media="(min-width: 1440px)" srcset="./assets/images/image-web-3-desktop.jpg">
+        <img id="main-image" src="assets\images\image-web-3-mobile.jpg" alt="puzzle picture"> <!--Change to a picture-->
+      </picture>
       <h1 id="main-header">The Bright Future of Web 3.0?</h1>
       <p id="main-paragraph">
         We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
@@ -82,6 +97,30 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Vlad Yaremchuk</a>.
   </div>
+
+  <script>
+    function openMenu() {
+      document.getElementById("close-menu").style.display = "block";
+      document.getElementById("side-menu").style.width = "60%";
+      document.getElementById("side-menu").style.paddingLeft = "20px";
+
+      document.getElementById("shade").style.height = "100vh";
+      document.getElementById("shade").style.width = "100vh";
+
+
+    }
+
+    function closeMenu() {
+      document.getElementById("close-menu").style.display = "none";
+      document.getElementById("side-menu").style.width = "0";
+      document.getElementById("side-menu").style.paddingLeft = "0";
+
+      document.getElementById("shade").style.height = "0";
+      document.getElementById("shade").style.width = "0";
+
+    }
+
+  </script>
 
 </body>
 </html>
