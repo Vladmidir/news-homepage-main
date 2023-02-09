@@ -3,7 +3,7 @@ body {
     margin: 40px 140px 20px 140px;
     font-family: 'Inter', sans-serif;
     line-height: 1.5em;
-
+    background-color: hsl(36, 100%, 99%);
 }
 
 body > p {
