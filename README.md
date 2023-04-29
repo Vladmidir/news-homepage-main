@@ -1,94 +1,103 @@
-# Frontend Mentor - News homepage
+# Frontend Mentor - News homepage solution
 
-![Design preview for the News homepage coding challenge](./design/desktop-preview.jpg)
+This is a solution to the [News homepage challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/news-homepage-H6SWTa1MFl). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for checking out this front-end coding challenge.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
 
-**To do this challenge, you need a good understanding of HTML and CSS, and basic JavaScript.**
+## Overview
 
-## The challenge
+### The challenge
 
-Your challenge is to build out this news website homepage and get it looking as close to the design as possible.
-
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
-
-Your users should be able to:
+Users should be able to:
 
 - View the optimal layout for the interface depending on their device's screen size
 - See hover and focus states for all interactive elements on the page
 
-Want some support on the challenge? [Join our Slack community](https://www.frontendmentor.io/slack) and ask questions in the **#help** channel.
+### Screenshot
 
-## Where to find everything
+![](./screenshot.jpg)
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+### Links
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+- Solution URL: https://github.com/Vladmidir/news-homepage-main
+- Live Site URL: https://vladmidir.github.io/news-homepage-main/index.html
 
-If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+### Built with
 
-All the required assets for this project are in the `/assets` folder. The images are already exported for the correct screen size and optimized.
+- Semantic HTML5 markup
+- CSS custom properties
+- CSS Grid
 
-We also include variable and static font files for the required fonts for this project. You can choose to either link to Google Fonts or use the local font files to host the fonts yourself. Note that we've removed the static font files for the font weights that aren't needed for this project.
+### What I learned
+In this project, I learned how to use the CSS grid. I learned how to set the grid template and place elements within the grid.
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+```css
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    gap: 35px 45px;
+}
 
-## Building your project
+picture {
+    grid-row: 1;
+    grid-column: 1/3 ;
+}
+```
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+I have also learned how to modify HTML using Javascript.
+```js
+document.getElementById("close-menu").style.display = "block";
+```
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+Learned how to make a sliding sidebar menu. 
 
-## Deploying your project
+```css
+.side-menu {
+    width: 0;
+    height: 100%;
+    transition: 0.5s;
+    background-color: hsl(36, 100%, 99%);
+}
+```
 
-As mentioned above, there are many ways to host your project for free. Our recommend hosts are:
+We set initial width of the menu to 0. On click, we change the width to the chosen value. Transition property adds the sliding animation.
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+```js
+function openMenu() {
+      document.getElementById("close-menu").style.display = "block";
+      document.getElementById("side-menu").style.width = "60%";
+      document.getElementById("side-menu").style.paddingLeft = "20px";
+    }
+```
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+### Continued development
 
-## Create a custom `README.md`
+Here is the feedback I received from one of the mentors.
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+* use landmark elements - header and main on this challenge, and footer if you include attribution. All content should be in landmarks.
+* only one nav, not two. Don’t repeat html for different screen sizes, just change existing markups layout with css
+* you cannot have event listeners on non interactive elements. For a mobile nav toggle, there must be an accessibly named button with aria-expanded attribute on it directly before the list you are toggling. Often there will only be one button used for both open and close but you could have two buttons if you prefer
+* don’t have an empty div. Create an overlay with a pseudo element and disable scroll when the nav is open on mobile this challenge needs a visually hidden h1
+* the featured article should be in an article element and have a h2
+* new section should ideally be in a section or aside with aria-labelledby pointing to the id of the New heading
+* inside each of the h3s you need to have anchor links. Think about how people would actually access these articles - they need to be able to click on them and navigate to the articles
+* ideally the new section should have each of the articles in an unordered list
+* the section at the bottom should have a visually hidden h2 eg other articles or recommended articles or popular articles, something like that
+* I recommend that is also a section with aria-labelledby that heading ID
+* the design shows each of the articles at the bottom are numbered. This gives a clear indication this section should include an ordered list to list these articles
+* as with the other articles, these also need anchor links so there is a way to click through to the articles
+* the numbers like 01 02 03 cannot be heading elements. That would make no sense semantically on a contents list for this page. Instead make them paragraphs. They could even be aria-hidden once you’ve added in the ordered list as each list item would be numbered already
+* do not change inline styles with javascript. That’s not what it’s for. Use JavaScript to toggle attributes like aria-expanded and classes or other attributes of you like. Let css handle ALL styling
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
-
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
-
-## Submitting your solution
-
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
-
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
-
-## Sharing your solution
-
-There are multiple places you can share your solution:
-
-1. Share your solution page in the **#finished-projects** channel of the [Slack community](https://www.frontendmentor.io/slack). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
-
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
-
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
-
-## Got feedback for us?
-
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
-
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
-
-**Have fun building!** 🚀
+I may redo this challenge in the future, accounting for all the feedback.
