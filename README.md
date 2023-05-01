@@ -88,7 +88,8 @@ Here is the feedback I received from one of the mentors.
 * use landmark elements - header and main on this challenge, and footer if you include attribution. All content should be in landmarks.
 * only one nav, not two. Don’t repeat html for different screen sizes, just change existing markups layout with css
 * you cannot have event listeners on non interactive elements. For a mobile nav toggle, there must be an accessibly named button with aria-expanded attribute on it directly before the list you are toggling. Often there will only be one button used for both open and close but you could have two buttons if you prefer
-* don’t have an empty div. Create an overlay with a pseudo element and disable scroll when the nav is open on mobile this challenge needs a visually hidden h1
+* don’t have an empty div. Create an overlay with a pseudo element and disable scroll when the nav is open on mobile 
+* this challenge needs a visually hidden h1
 * the featured article should be in an article element and have a h2
 * new section should ideally be in a section or aside with aria-labelledby pointing to the id of the New heading
 * inside each of the h3s you need to have anchor links. Think about how people would actually access these articles - they need to be able to click on them and navigate to the articles
